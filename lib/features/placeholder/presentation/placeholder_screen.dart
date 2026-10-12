@@ -20,7 +20,9 @@ class PlaceholderScreen extends StatelessWidget {
     return SafeArea(
       child: Center(
         child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: AppDimensions.contentMaxWidth),
+          constraints: const BoxConstraints(
+            maxWidth: AppDimensions.contentMaxWidth,
+          ),
           child: Padding(
             padding: const EdgeInsets.all(AppDimensions.screenPadding),
             child: Column(
@@ -31,7 +33,9 @@ class PlaceholderScreen extends StatelessWidget {
                   height: 64,
                   decoration: BoxDecoration(
                     color: theme.colorScheme.primaryContainer,
-                    borderRadius: BorderRadius.circular(AppDimensions.radiusCard),
+                    borderRadius: BorderRadius.circular(
+                      AppDimensions.radiusCard,
+                    ),
                   ),
                   alignment: Alignment.center,
                   child: Icon(icon, size: 30, color: theme.colorScheme.primary),

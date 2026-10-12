@@ -6,16 +6,16 @@ import 'app_text_theme.dart';
 
 abstract final class AppTheme {
   static ThemeData get light => _build(
-        colorScheme: AppColors.lightScheme,
-        textTheme: AppTextTheme.light,
-        scaffoldBackgroundColor: AppPalette.neutral50,
-      );
+    colorScheme: AppColors.lightScheme,
+    textTheme: AppTextTheme.light,
+    scaffoldBackgroundColor: AppPalette.neutral50,
+  );
 
   static ThemeData get dark => _build(
-        colorScheme: AppColors.darkScheme,
-        textTheme: AppTextTheme.dark,
-        scaffoldBackgroundColor: AppPalette.neutral950,
-      );
+    colorScheme: AppColors.darkScheme,
+    textTheme: AppTextTheme.dark,
+    scaffoldBackgroundColor: AppPalette.neutral950,
+  );
 
   static ThemeData _build({
     required ColorScheme colorScheme,
@@ -57,8 +57,13 @@ abstract final class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: colorScheme.surface,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
-        hintStyle: textTheme.bodyMedium?.copyWith(color: colorScheme.onSurfaceVariant),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 15,
+        ),
+        hintStyle: textTheme.bodyMedium?.copyWith(
+          color: colorScheme.onSurfaceVariant,
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppDimensions.radiusInput),
           borderSide: BorderSide(color: colorScheme.outlineVariant),
@@ -103,14 +108,17 @@ abstract final class AppTheme {
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           final selected = states.contains(WidgetState.selected);
           return textTheme.labelSmall?.copyWith(
-            color: selected ? colorScheme.primary : colorScheme.onSurfaceVariant,
+            color:
+                selected ? colorScheme.primary : colorScheme.onSurfaceVariant,
           );
         }),
       ),
       snackBarTheme: SnackBarThemeData(
         behavior: SnackBarBehavior.floating,
         backgroundColor: colorScheme.inverseSurface,
-        contentTextStyle: textTheme.bodyMedium?.copyWith(color: colorScheme.onInverseSurface),
+        contentTextStyle: textTheme.bodyMedium?.copyWith(
+          color: colorScheme.onInverseSurface,
+        ),
       ),
     );
   }
