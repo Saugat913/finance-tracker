@@ -47,7 +47,7 @@ final GoRouter appRouter = GoRouter(
                   (context, state) => const PlaceholderScreen(
                     title: 'Calendar',
                     description: 'Explore transactions and upcoming dates.',
-                    icon: HugeIcons.strokeRoundedDates,
+                    icon: HugeIcons.strokeRoundedCalendar03,
                   ),
             ),
           ],
