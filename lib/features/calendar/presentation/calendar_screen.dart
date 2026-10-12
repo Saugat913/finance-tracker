@@ -42,7 +42,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
       _selectedDate = DateTime(
         _visibleMonth.year,
         _visibleMonth.month,
-        _selectedDate.day.clamp(1, lastDay),
+        _selectedDate.day.clamp(1, lastDay).toInt(),
       );
     });
   }
@@ -227,17 +227,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      _LegendDot(color: theme.colorScheme.tertiary),
-                      const SizedBox(width: 5),
-                      Text('Income', style: theme.textTheme.labelSmall),
-                      const SizedBox(width: 16),
-                      _LegendDot(color: theme.colorScheme.error),
-                      const SizedBox(width: 5),
-                      Text('Expense', style: theme.textTheme.labelSmall),
-                      const SizedBox(width: 16),
                       _LegendDot(color: theme.colorScheme.primary),
-                      const SizedBox(width: 5),
-                      Text('Activity', style: theme.textTheme.labelSmall),
+                      const SizedBox(width: 6),
+                      Text('Recorded activity', style: theme.textTheme.labelSmall),
                     ],
                   ),
                 ],
@@ -262,7 +254,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
             ),
             const SizedBox(height: 12),
             if (selectedTransactions.isEmpty && selectedTransfers.isEmpty)
-              _NoActivityCard(date: _selectedDate)
+              const _NoActivityCard()
             else ...[
               for (final transaction in selectedTransactions)
                 Padding(
@@ -597,9 +589,7 @@ class _ActivityCard extends StatelessWidget {
 }
 
 class _NoActivityCard extends StatelessWidget {
-  const _NoActivityCard({required this.date});
-
-  final DateTime date;
+  const _NoActivityCard();
 
   @override
   Widget build(BuildContext context) {
