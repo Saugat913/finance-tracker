@@ -1,17 +1,39 @@
-# finance_tracker
+# Finance Planner
 
-A new Flutter project.
+An offline-first personal finance planner built with Flutter.
 
-## Getting Started
+## Architecture
 
-This project is a starting point for a Flutter application.
+- Feature-first project structure.
+- MVVM presentation with Flutter's native `ChangeNotifier`.
+- GetIt for dependency injection.
+- GoRouter for navigation.
+- Drift for local SQLite persistence.
+- Shared light/dark Material 3 design system.
 
-A few resources to get you started if this is your first Flutter project:
+## Local development
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Use a stable Flutter SDK that satisfies the Dart SDK constraint in `pubspec.yaml`.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+dart format .
+flutter analyze
+flutter test
+flutter run
+```
+
+Drift generates `lib/core/database/app_database.g.dart` from the annotated database and table declarations. Regenerate it whenever those declarations change.
+
+## Git workflow
+
+- `master`: stable branch; do not develop directly on it.
+- `dev`: integration branch.
+- `feature/*`: short-lived feature branches created from `dev`; pull requests target `dev`.
+
+Never target `master` with feature pull requests during active development.
+
+## Current foundation
+
+The initial app shell contains Home, Calendar, Money, Work and Plan destinations. These are temporary placeholders for feature implementation. Financial features will be added incrementally with domain contracts, data implementations, ViewModels and tests.
