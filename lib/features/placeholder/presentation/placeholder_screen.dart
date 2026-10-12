@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:finance_tracker/core/theme/app_dimensions.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class PlaceholderScreen extends StatelessWidget {
   const PlaceholderScreen({
@@ -11,7 +12,7 @@ class PlaceholderScreen extends StatelessWidget {
 
   final String title;
   final String description;
-  final IconData icon;
+  final List<List<dynamic>> icon;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,11 @@ class PlaceholderScreen extends StatelessWidget {
                     ),
                   ),
                   alignment: Alignment.center,
-                  child: Icon(icon, size: 30, color: theme.colorScheme.primary),
+                  child: HugeIcon(
+                    icon: icon,
+                    size: 30,
+                    color: theme.colorScheme.primary,
+                  ),
                 ),
                 const SizedBox(height: AppDimensions.itemSpacing),
                 Text(title, style: theme.textTheme.headlineMedium),

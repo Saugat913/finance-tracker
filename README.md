@@ -37,3 +37,18 @@ Never target `master` with feature pull requests during active development.
 ## Current foundation
 
 The initial app shell contains Home, Calendar, Money, Work and Plan destinations. These are temporary placeholders for feature implementation. Financial features will be added incrementally with domain contracts, data implementations, ViewModels and tests.
+
+## Branding assets
+
+- `assets/logo.svg` is the editable vector master for the brand mark.
+- Export it to `assets/logo.png` before generating platform icons and native splash assets. Use a high-resolution transparent PNG; keep the mark centered with comfortable padding.
+- The Flutter splash screen renders the SVG directly and shows the Finance Planner wordmark/tagline. The native splash is shown first while Flutter starts.
+
+After adding `assets/logo.png`, generate the platform launcher icons and native splash:
+
+```bash
+dart run flutter_launcher_icons
+dart run flutter_native_splash:create
+```
+
+The old counter demo widget test has been temporarily commented out because it referenced the removed `MyApp` counter scaffold. Tests are intentionally deferred while the app foundation is being built.
