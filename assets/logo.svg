@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <title>Finance Planner</title>
+  <desc>A minimal teal growth mark made from a rounded frame and rising financial bars.</desc>
+  <rect x="32" y="32" width="448" height="448" rx="120" fill="#087F8C"/>
+  <path d="M128 350V162" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round"/>
+  <path d="M128 350H384" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round"/>
+  <rect x="168" y="264" width="48" height="58" rx="14" fill="#B9F0EC"/>
+  <rect x="242" y="218" width="48" height="104" rx="14" fill="#B9F0EC"/>
+  <rect x="316" y="166" width="48" height="156" rx="14" fill="#FFFFFF"/>
+  <path d="M163 226L232 178L279 194L358 119" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M316 119H358V161" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
