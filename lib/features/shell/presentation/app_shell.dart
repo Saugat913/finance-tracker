@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class AppShell extends StatelessWidget {
   const AppShell({super.key, required this.navigationShell});
@@ -22,28 +23,28 @@ class AppShell extends StatelessWidget {
         onDestinationSelected: _onDestinationSelected,
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.home_outlined),
-            selectedIcon: Icon(Icons.home_rounded),
+            icon: HugeIcon(icon: HugeIcons.strokeRoundedHome01),
+            selectedIcon: HugeIcon(icon: HugeIcons.strokeRoundedHome01),
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Icon(Icons.calendar_month_outlined),
-            selectedIcon: Icon(Icons.calendar_month_rounded),
+            icon: HugeIcon(icon: HugeIcons.strokeRoundedDates),
+            selectedIcon: HugeIcon(icon: HugeIcons.strokeRoundedDates),
             label: 'Calendar',
           ),
           NavigationDestination(
-            icon: Icon(Icons.account_balance_wallet_outlined),
-            selectedIcon: Icon(Icons.account_balance_wallet_rounded),
+            icon: HugeIcon(icon: HugeIcons.strokeRoundedBanknote),
+            selectedIcon: HugeIcon(icon: HugeIcons.strokeRoundedBanknote),
             label: 'Money',
           ),
           NavigationDestination(
-            icon: Icon(Icons.work_outline_rounded),
-            selectedIcon: Icon(Icons.work_rounded),
+            icon: HugeIcon(icon: HugeIcons.strokeRoundedBriefcaseBusiness),
+            selectedIcon: HugeIcon(icon: HugeIcons.strokeRoundedBriefcaseBusiness),
             label: 'Work',
           ),
           NavigationDestination(
-            icon: Icon(Icons.auto_graph_outlined),
-            selectedIcon: Icon(Icons.auto_graph_rounded),
+            icon: HugeIcon(icon: HugeIcons.strokeRoundedAnalytics01),
+            selectedIcon: HugeIcon(icon: HugeIcons.strokeRoundedAnalytics01),
             label: 'Plan',
           ),
         ],
