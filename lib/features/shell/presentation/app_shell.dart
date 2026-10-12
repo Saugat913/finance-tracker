@@ -28,8 +28,8 @@ class AppShell extends StatelessWidget {
             label: 'Home',
           ),
           NavigationDestination(
-            icon: HugeIcon(icon: HugeIcons.strokeRoundedDates),
-            selectedIcon: HugeIcon(icon: HugeIcons.strokeRoundedDates),
+            icon: HugeIcon(icon: HugeIcons.strokeRoundedCalendar03),
+            selectedIcon: HugeIcon(icon: HugeIcons.strokeRoundedCalendar03),
             label: 'Calendar',
           ),
           NavigationDestination(
