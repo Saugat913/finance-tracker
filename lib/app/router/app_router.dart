@@ -34,7 +34,7 @@ final GoRouter appRouter = GoRouter(
                   (context, state) => const PlaceholderScreen(
                     title: 'Home',
                     description: 'Your financial overview will live here.',
-                    icon: Icons.home_rounded,
+                    icon: HugeIcons.strokeRoundedHome01,
                   ),
             ),
           ],
@@ -47,7 +47,7 @@ final GoRouter appRouter = GoRouter(
                   (context, state) => const PlaceholderScreen(
                     title: 'Calendar',
                     description: 'Explore transactions and upcoming dates.',
-                    icon: Icons.calendar_month_rounded,
+                    icon: HugeIcons.strokeRoundedDates,
                   ),
             ),
           ],
@@ -60,7 +60,7 @@ final GoRouter appRouter = GoRouter(
                   (context, state) => const PlaceholderScreen(
                     title: 'Money',
                     description: 'Accounts and transactions will live here.',
-                    icon: Icons.account_balance_wallet_rounded,
+                    icon: HugeIcons.strokeRoundedBanknote,
                   ),
             ),
           ],
@@ -73,7 +73,7 @@ final GoRouter appRouter = GoRouter(
                   (context, state) => const PlaceholderScreen(
                     title: 'Work',
                     description: 'Track shifts and expected income.',
-                    icon: Icons.work_outline_rounded,
+                    icon: HugeIcons.strokeRoundedBriefcaseBusiness,
                   ),
             ),
           ],
@@ -86,7 +86,7 @@ final GoRouter appRouter = GoRouter(
                   (context, state) => const PlaceholderScreen(
                     title: 'Plan',
                     description: 'Goals, forecasts and financial plans.',
-                    icon: Icons.auto_graph_rounded,
+                    icon: HugeIcons.strokeRoundedAnalytics01,
                   ),
             ),
           ],
