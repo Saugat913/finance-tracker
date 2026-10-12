@@ -8,6 +8,16 @@ abstract final class AppPalette {
   static const Color brandPressed = Color(0xFF055861);
   static const Color brandSubtle = Color(0xFFE5F5F5);
   static const Color brandOn = Color(0xFFFFFFFF);
+  static const Color brandLight = Color(0xFF80D8DE);
+  static const Color brandOnDark = Color(0xFF11191E);
+  static const Color brandContainerDark = Color(0xFF164C52);
+  static const Color brandOnContainerDark = Color(0xFFD2F5F6);
+  static const Color infoLight = Color(0xFF9BBEFF);
+  static const Color infoContainerDark = Color(0xFF203C65);
+  static const Color infoOnContainerDark = Color(0xFFDCE8FF);
+  static const Color expenseLight = Color(0xFFFFB4AB);
+  static const Color expenseContainerDark = Color(0xFF7F2929);
+  static const Color expenseOnContainerDark = Color(0xFFFFDAD6);
 
   // Neutral scale.
   static const Color white = Color(0xFFFFFFFF);
