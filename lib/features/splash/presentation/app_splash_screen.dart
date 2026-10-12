@@ -45,7 +45,7 @@ class _AppSplashScreenState extends State<AppSplashScreen> {
                 width: 88,
                 height: 88,
                 decoration: BoxDecoration(
-                  color: colors.primary,
+                  color: colors.primaryContainer,
                   borderRadius: BorderRadius.circular(28),
                 ),
                 alignment: Alignment.center,
