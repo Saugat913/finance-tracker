@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:hugeicons/hugeicons.dart';
 import 'package:finance_tracker/features/accounts/presentation/accounts_screen.dart';
+import 'package:finance_tracker/features/calendar/presentation/calendar_screen.dart';
 import 'package:finance_tracker/features/home/presentation/home_dashboard_screen.dart';
 import 'package:finance_tracker/features/transactions/presentation/transactions_screen.dart';
 import 'package:finance_tracker/features/transfers/presentation/transfers_screen.dart';
@@ -41,11 +41,7 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: AppRoutes.calendar,
-              builder: (context, state) => const PlaceholderScreen(
-                title: 'Calendar',
-                description: 'Explore transactions and upcoming dates.',
-                icon: HugeIcons.strokeRoundedCalendar03,
-              ),
+              builder: (context, state) => const CalendarScreen(),
             ),
           ],
         ),
@@ -64,7 +60,7 @@ final GoRouter appRouter = GoRouter(
               builder: (context, state) => const PlaceholderScreen(
                 title: 'Work',
                 description: 'Track shifts and expected income.',
-                icon: HugeIcons.strokeRoundedBriefcaseBusiness,
+                icon: null,
               ),
             ),
           ],
@@ -76,7 +72,7 @@ final GoRouter appRouter = GoRouter(
               builder: (context, state) => const PlaceholderScreen(
                 title: 'Plan',
                 description: 'Goals, forecasts and financial plans.',
-                icon: HugeIcons.strokeRoundedAnalytics01,
+                icon: null,
               ),
             ),
           ],
