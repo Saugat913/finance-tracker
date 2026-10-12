@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:finance_tracker/core/theme/app_dimensions.dart';
 
 class AppSplashScreen extends StatefulWidget {
@@ -49,11 +49,14 @@ class _AppSplashScreenState extends State<AppSplashScreen> {
                   borderRadius: BorderRadius.circular(28),
                 ),
                 alignment: Alignment.center,
-                child: const HugeIcon(
-                  icon: HugeIcons.strokeRoundedAnalytics01,
-                  size: 48,
-                  color: Colors.white,
-                  strokeWidth: 2.2,
+                child: Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: SvgPicture.asset(
+                    'assets/logo.svg',
+                    width: 60,
+                    height: 60,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
               const SizedBox(height: AppDimensions.itemSpacing),
