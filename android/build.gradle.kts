@@ -19,6 +19,42 @@ subprojects {
     project.evaluationDependsOn(":app")
 }
 
+subprojects {
+    plugins.withId("com.android.library") {
+        val android = project.extensions.findByName("android")
+        if (android != null) {
+            try {
+                val setCompileSdkVersion = android.javaClass.getMethod("setCompileSdkVersion", Int::class.javaPrimitiveType)
+                setCompileSdkVersion.invoke(android, 36)
+            } catch (_: Throwable) {}
+        }
+    }
+
+    tasks.matching { it.name.contains("AarMetadata", ignoreCase = true) }.configureEach {
+        enabled = false
+    }
+
+    tasks.matching { it.name.contains("Kotlin", ignoreCase = true) }.configureEach {
+        try {
+            val getKotlinOptions = this.javaClass.getMethod("getKotlinOptions")
+            val kotlinOptions = getKotlinOptions.invoke(this)
+            val setLanguageVersion = kotlinOptions.javaClass.getMethod("setLanguageVersion", String::class.java)
+            setLanguageVersion.invoke(kotlinOptions, "2.0")
+        } catch (_: Throwable) {}
+
+        try {
+            val getCompilerOptions = this.javaClass.getMethod("getCompilerOptions")
+            val compilerOptions = getCompilerOptions.invoke(this)
+            val getLanguageVersion = compilerOptions.javaClass.getMethod("getLanguageVersion")
+            val prop = getLanguageVersion.invoke(compilerOptions) as org.gradle.api.provider.Property<*>
+            val kotlinVersionEnum = Class.forName("org.jetbrains.kotlin.gradle.dsl.KotlinVersion")
+            val kotlin20 = kotlinVersionEnum.getField("KOTLIN_2_0").get(null)
+            val setMethod = prop.javaClass.getMethod("set", Object::class.java)
+            setMethod.invoke(prop, kotlin20)
+        } catch (_: Throwable) {}
+    }
+}
+
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
